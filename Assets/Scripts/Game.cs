@@ -52,6 +52,7 @@ public class Game : MonoBehaviour
     private AudioClip[] audioClips;
     private void Awake()
     {
+        QualitySettings.vSyncCount = 0;
         Application.targetFrameRate = 60;
         Time.timeScale = 1;
         Screen.SetResolution(800, 600, false);
@@ -443,6 +444,7 @@ public class Game : MonoBehaviour
     }
     public void restart()
     {
+        save();
         SceneManager.LoadScene("MainScene");
     }
     public void quit()
